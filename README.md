@@ -40,9 +40,9 @@ The dataset is split to training set and testing set in 80:20 ratio respectively
 
 ## Basic Convolutional Neural Networks (CNN) 
 The basic CNN model consist of three parts.<br>
-The first part is a feature extraction part which consist of three convolution layers and two Max Pooling layers.<br>
-It follows with a flattening part which can make the model more generalize and prevent over-fitting.<br>
-The models end with three layers of neuronn network for classification and the activation function 'sigmoid' will predict the image pass through is an infected (as 1) or uninfected (as 0) cell image.<br>
+First: The first part is a feature extraction part which consist of three convolution layers and two Max Pooling layers.<br>
+Second: It follows with a flattening part which can make the model more generalize and prevent over-fitting.<br>
+Third: The models end with three layers of neuronn network for classification and the activation function 'sigmoid' will predict the image pass through is an infected (as 1) or uninfected (as 0) cell image.<br>
 
 The below is the code and the structure of the model.<br>
 <img src="image/model_CNN.png" width="600">
@@ -66,8 +66,12 @@ ImageDataFenerator improve the model significantly and result for a more general
 <img src="image/model2_performance.png" width="600">
 
 ## Model 2: Apply transfer leaning (VGG16)
-Transfer learning is another method that commonly used in machine learning for prediction model where the medol will reused some parts of a pre-trained model as a starting point of the new moel training. <br>
+Transfer learning is another method that commonly used in machine learning for prediction model training.  The model will reused some parts of a pre-trained model as a starting point of the new model training. <br>
 
-VGG16 is a CNN model 
-
+VGG16 is a CNN model achieves 92.7% top-5 test accuracy in ImageNet, which is a dataset of over 14 million images belonging to 1000 classes. It has a strong feature extraction layer that will be used to replace the first layer of the basic model. The code and structure of Model2 is as below. For the dataset, it remain unchange is the origianl dataset.
 <img src="image/model_transferlearning.png" width="600">
+
+Model 2 achieved similar accuracy as Model 1. However, it is interesting to note that the training accuracy is higher than the actual accuracy. The model is slightly overfitted.
+<img src="image/model3_performance.png" width="600">
+
+## Conclusion
