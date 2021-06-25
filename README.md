@@ -54,8 +54,8 @@ Since the dataset is small and the model is relatively simple, the model is over
 <img src="image/model1_performance.png" width="600">
 
 #### In the next part, the below two methods applied on the basic model, aimed at improving the model performance and two new models created.<br>
-# Model 1. Image Data Generator
-# Model 2. Transfer Learning (VGG16)
+Model 1. Image Data Generator
+Model 2. Transfer Learning (VGG16)
 
 
 ## Model 1: Apply ImageDataGenerator
