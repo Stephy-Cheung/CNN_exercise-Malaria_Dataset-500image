@@ -12,7 +12,7 @@ The Malaria dataset contains a total number of 27,558 blood cell images and anno
 #### About this repository
 In real-world setting, it is more often that we may have a small dataset to work with. <br>
 Therefore, I would like to reduce the dataset to 500 images and explore the below two methods that commonly used to improve model performance for small dataset. <br>
-Then, exploring the effect of below ways in improving the model.
+Then, exploring the effect of how they improve the model.
 1. Image Data Generator
 2. Transfer Learning (VGG16)
 
@@ -40,26 +40,26 @@ The dataset is split to training set and testing set in 80:20 ratio respectively
 
 ## Basic Convolutional Neural Networks (CNN) 
 The basic CNN model consist of three parts.<br>
-First: The first part is a feature extraction part which consist of three convolution layers and two Max Pooling layers.<br>
-Second: It follows with a flattening part which can make the model more generalize and prevent over-fitting.<br>
-Third: The models end with three layers of neuronn network for classification and the activation function 'sigmoid' will predict the image pass through is an infected (as 1) or uninfected (as 0) cell image.<br>
+Part 1 : Feature Extraction which consist of three convolution layers and two Max Pooling layers.<br>
+Part 2 : Flattening part which can make the model more generalize and prevent over-fitting.<br>
+Part 3 : The model ends with three layers of neuron network for classification function and the activation function 'sigmoid' will predict the image is an infected (as 1) or uninfected (as 0) cell image.<br>
 
 The below is the code and the structure of the model.<br>
 <img src="image/model_CNN.png" width="600">
 <img src="image/visualize_model.png" width="600">
 
-The basic model trained directly using the 500 images, with batch_size = 20 and epochs = 20.<br>
+The basic model trained directly using the random 500 images, with batch_size = 20 and epochs = 20.<br>
 
 Since the dataset is small and the model is relatively simple, the model is overfitted and the accuracy on the testing set is only 0.6. The below graph is to visualize the training performance. <br>
 <img src="image/model1_performance.png" width="600">
 
-The below methods applied on the basic model, aimed at improving the model performance and two new models created.<br>
-Model 1. Image Data Generator
-Model 2. Transfer Learning (VGG16)
+#### In the next part, the below two methods applied on the basic model, aimed at improving the model performance and two new models created.<br>
+# Model 1. Image Data Generator
+# Model 2. Transfer Learning (VGG16)
 
 
 ## Model 1: Apply ImageDataGenerator
-Model 1 is applying ImageDataFenerator on the dataset which create random variation on the images. Random rotation, zoom, shift, shear or flip applied on different images and pass througgh the basic CNN model structure. <br>
+Model 1 applies ImageDataFenerator on the dataset which create random variation on the images. Random rotation, zoom, shift, shear or flip applied on different images and pass througgh the basic CNN model structure. <br>
 <img src="image/model_CNNimagedatagenerator.png" width="600">
 
 ImageDataFenerator improve the model significantly and result for a more generalized model. Both the training accuracy and actual accuracy are reaching simliar accuracy at over 90% and is not overfitting to the training data. <br>
@@ -75,3 +75,4 @@ Model 2 achieved similar accuracy as Model 1. However, it is interesting to note
 <img src="image/model3_performance.png" width="600">
 
 ## Conclusion
+Both ImageDataGenerator and Transfer learning were useful during small dataset training not only to improve the model accuracy, but more important improve the ability to extract image feature and create a more generalized model. 
