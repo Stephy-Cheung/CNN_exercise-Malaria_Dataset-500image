@@ -53,25 +53,22 @@ The basic model trained directly using the random 500 images, with batch_size = 
 Since the dataset is small and the model is relatively simple, the model is overfitted and the accuracy on the testing set is only 0.6. The below graph is to visualize the training performance. <br>
 <img src="image/model1_performance.png" width="600">
 
-#### In the next part, the below two methods applied on the basic model, aimed at improving the model performance and two new models created.<br>
-Model 1. Image Data Generator
-Model 2. Transfer Learning (VGG16)
-
+#### In the next part, Image Data Generator and Transfer Learning (VGG16) are used separately on the basic model, aimed at improving the model performance and two new models created.<br>
 
 ## Model 1: Apply ImageDataGenerator
 Model 1 applies ImageDataFenerator on the dataset which create random variation on the images. Random rotation, zoom, shift, shear or flip applied on different images and pass througgh the basic CNN model structure. <br>
 <img src="image/model_CNNimagedatagenerator.png" width="600">
 
 ImageDataFenerator improve the model significantly and result for a more generalized model. Both the training accuracy and actual accuracy are reaching simliar accuracy at over 90% and is not overfitting to the training data. <br>
-<img src="image/model2_performance.png" width="600">
+<img src="image/model12_performance.png" width="600">
 
 ## Model 2: Apply transfer leaning (VGG16)
 Transfer learning is another method that commonly used in machine learning for prediction model training.  The model will reused some parts of a pre-trained model as a starting point of the new model training. <br>
 
-VGG16 is a CNN model achieves 92.7% top-5 test accuracy in ImageNet, which is a dataset of over 14 million images belonging to 1000 classes. It has a strong feature extraction layer that will be used to replace the first layer of the basic model. The code and structure of Model2 is as below. For the dataset, it remain unchange is the origianl dataset.
+VGG16 is a CNN model achieves 92.7% top-5 test accuracy in ImageNet, which is a dataset of over 14 million images belonging to 1000 classes. It has a strong feature extraction layer that will be used to replace the first layer of the basic model. The code and structure of Model2 is as below. For the dataset, it remain unchange is the origianl dataset.<br>
 <img src="image/model_transferlearning.png" width="600">
 
-Model 2 achieved similar accuracy as Model 1. However, it is interesting to note that the training accuracy is higher than the actual accuracy. The model is slightly overfitted.
+Model 2 achieved similar accuracy as Model 1. However, it is interesting to note that the training accuracy is higher than the actual accuracy. The model is slightly overfitted.<br>
 <img src="image/model3_performance.png" width="600">
 
 ## Conclusion
